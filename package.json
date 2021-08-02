@@ -1,8 +1,8 @@
 {
-	"name": "tele-notifier",
+	"name": "@rzkytmgr/tele-notifier",
 	"version": "1.0.0",
 	"description": "mini telegram notifier extract sendMessage, sendPhoto, sendAudio, sendDocument API from telegram main API documentation",
-	"main": "TeleNotifier.js",
+	"main": "Notifier.js",
 	"scripts": {
 		"start": "node Notifier"
 	},
@@ -18,5 +18,14 @@
 	"license": "ISC",
 	"dependencies": {
 		"node-fetch": "^2.6.1"
+	},
+	"homepage": "https://github.com/rzkytmgr/tele-notifier",
+	"devDependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rzkytmgr/tele-notifier.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rzkytmgr/tele-notifier/issues"
 	}
 }
