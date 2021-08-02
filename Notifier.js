@@ -67,11 +67,17 @@ class TeleNotifier {
 	 * @param {string} client
 	 * @returns response from sendMessage telegram API
 	 */
-	async sendMessage(textMessage, client = null) {
-		if (client) this.setClient(client);
-		this.verify();
-		const response = await fetch(this.GLOBAL_URL + 'sendMessage?chat_id=' + this.client + '&text=' + encodeURI(textMessage));
-		return await response.json();
+	sendMessage(textMessage, client = null) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				if (client) this.setClient(client);
+				this.verify();
+				const response = await fetch(this.GLOBAL_URL + 'sendMessage?chat_id=' + this.client + '&text=' + encodeURI(textMessage));
+				resolve(response.json());
+			} catch (Exception) {
+				reject("Something's wrong! I can feel it!");
+			}
+		});
 	}
 
 	/**
@@ -82,10 +88,16 @@ class TeleNotifier {
 	 * @returns response from sendPhoto telegram API
 	 */
 	async sendPhoto(photoUrl, caption = null, client = null) {
-		if (client) this.setClient(client);
-		this.verify();
-		const response = await fetch(this.GLOBAL_URL + 'sendPhoto?chat_id=' + this.client + '&photo=' + photoUrl + '&caption=' + encodeURI(caption));
-		return await response.json();
+		return new Promise(async (resolve, reject) => {
+			try {
+				if (client) this.setClient(client);
+				this.verify();
+				const response = await fetch(this.GLOBAL_URL + 'sendPhoto?chat_id=' + this.client + '&photo=' + photoUrl + '&caption=' + encodeURI(caption));
+				resolve(await response.json());
+			} catch (Exception) {
+				reject("Something's wrong! I can feel it!");
+			}
+		});
 	}
 
 	/**
@@ -96,10 +108,16 @@ class TeleNotifier {
 	 * @returns response from sendAudio telegram API
 	 */
 	async sendAudio(audioUrl, caption = null, client = null) {
-		if (client) this.setClient(client);
-		this.verify();
-		const response = await fetch(this.GLOBAL_URL + 'sendAudio?chat_id=' + this.client + '&audio=' + audioUrl + '&caption=' + encodeURI(caption));
-		return await response.json();
+		return new Promise(async (resolve, reject) => {
+			try {
+				if (client) this.setClient(client);
+				this.verify();
+				const response = await fetch(this.GLOBAL_URL + 'sendAudio?chat_id=' + this.client + '&audio=' + audioUrl + '&caption=' + encodeURI(caption));
+				resolve(await response.json());
+			} catch (Exception) {
+				reject("Something's wrong! I can feel it!");
+			}
+		});
 	}
 
 	/**
@@ -111,10 +129,16 @@ class TeleNotifier {
 	 * @returns response from sendDocument telegram API
 	 */
 	async sendDocument(documentUrl, caption = null, thumbnail = null, client = null) {
-		if (client) this.setClient(client);
-		this.verify();
-		const response = await fetch(this.GLOBAL_URL + 'sendDocument?chat_id=' + this.client + '&document=' + documentUrl + '&caption=' + caption + '&thumb=' + thumbnail);
-		return await response.json();
+		return new Promise(async (resolve, reject) => {
+			try {
+				if (client) this.setClient(client);
+				this.verify();
+				const response = await fetch(this.GLOBAL_URL + 'sendDocument?chat_id=' + this.client + '&document=' + documentUrl + '&caption=' + caption + '&thumb=' + thumbnail);
+				resolve(await response.json());
+			} catch (Exception) {
+				reject("Something's wrong! I can feel it!");
+			}
+		});
 	}
 }
 
