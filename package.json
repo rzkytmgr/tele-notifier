@@ -1,0 +1,22 @@
+{
+	"name": "tele-notifier",
+	"version": "1.0.0",
+	"description": "mini telegram notifier extract sendMessage, sendPhoto, sendAudio, sendDocument API from telegram main API documentation",
+	"main": "TeleNotifier.js",
+	"scripts": {
+		"start": "node Notifier"
+	},
+	"keywords": [
+		"telegram",
+		"notifier",
+		"notify",
+		"tele",
+		"api",
+		"telegram api"
+	],
+	"author": "rzkytmgr",
+	"license": "ISC",
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	}
+}
